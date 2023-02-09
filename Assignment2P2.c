@@ -14,11 +14,27 @@ void main()
 	printf("Enter Date \t Enter Month\tEnter Year:\n");
 	scanf("%d%d%d",&d.dat,&d.month,&d.year);
 	printf("Current date is :");
-	printf("\n\t %d/%d/%d",d.dat,d.month,d.year);
+	printf("\n\t %d/%d/%d\n",d.dat,d.month,d.year);
 	if(d.dat>31||d.month>12)
 	{
 		printf("INVALID");
 		exit(0);
+	}
+	else if(d.month==2)
+	{
+		if(d.year%400==0||d.year%4==0 && d.year%100!=0)
+		{
+			if(d.dat>29)
+			{
+				printf("INVALID !!");
+				exit(0);
+			}
+		}
+		else if(d.dat>28)
+		{
+			printf("INVALID !!");
+			exit(0);
+		}
 	}
 	printf("\nNew Date is :\n");
 	
